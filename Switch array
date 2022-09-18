@@ -1,0 +1,100 @@
+#include<stdio.h>
+int main()
+{
+    int a[50];
+    int i,m,no;
+    int loc,ele,n,flag=0;
+    
+    printf("enter how many elements to store: ");
+    scanf("%d",&m);
+    printf("Eneter the elements of an array: ");
+    for(i=0;i<m;i++)
+    {
+    scanf("%d",&a[i]);
+    } 
+    
+    printf("\n-----------------------------------------------------------------------");
+    printf("\n\n ------ OPERATIONS ON ARRAY----------");
+    printf("\n\n 1. display elements\n 2: searching \n 3:insertion\n 4:delation\n ");
+    printf("Enter your choice: ");
+    scanf("%d",&no);
+    
+    switch(no)
+    {
+        case 1:
+            printf("the elemnts in an array is: ");
+    for(i=0;i<m;i++)
+    {
+        printf(" %d",a[i]);
+    }
+            break ;
+      
+    
+      case 2:
+        
+            printf("Enter user search no: ");
+     scanf("%d",&no);
+     
+        for(int i=0;i<m;i++)
+  {
+    if(no==a[i])
+      {
+        printf("search successful");
+        flag=1;
+        break;
+        
+    }
+        }        
+    if(flag==0)
+    {
+        printf("search unsuccessful...");
+    }
+    break ;
+  
+  
+     case 3:
+       printf("\n------------------------------------------------");
+    printf("\n enter the elemet to insert in an array:");
+    scanf("%d",&ele);
+     
+    printf("\n Enter the location where the element is insert: ");
+    scanf("%d",&loc);
+        
+        for(i=m-1;i>=loc;i--)
+        {
+            a[i+1]=a[i];
+        }
+    a[loc]=ele;
+    
+    printf("\n element after insertion is: ");
+    for(i=0;i<=m;i++)
+    {
+        printf(" %d",a[i]);
+    }    
+  break ;
+   
+    case 4:
+           
+       printf("\n------------------------------------------------");
+    printf("\n enter the position to delate  an array element:");
+    scanf("%d",&loc);
+     
+    
+        
+        for(i=loc;i<=m-1;i++)
+        {
+            a[i]=a[i+1];
+        }
+    
+    
+    printf("\n element after delation  is: ");
+    for(i=0;i<m-1;i++)
+    {
+        printf(" %d",a[i]);
+    }  
+    break ;  
+ }
+ return 0;   
+    
+  
+}    
